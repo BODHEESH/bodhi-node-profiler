@@ -7,7 +7,7 @@
 [![npm version](https://img.shields.io/npm/v/bodhi-node-profiler.svg)](https://www.npmjs.com/package/bodhi-node-profiler)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/bodheeshvc/bodhi-node-profiler/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BODHEESH/bodhi-node-profiler/pulls)
 
 </div>
 
@@ -229,6 +229,62 @@ const profiler = new BodhiProfiler({
 });
 ```
 
+## Log Management
+
+The profiler now includes smart log management features:
+
+#### Log Rotation
+- Automatic log rotation based on size or date
+- Compressed archives for space efficiency
+- Configurable retention periods
+
+```javascript
+logging: {
+    rotation: {
+        maxFiles: '7d',      // Keep 7 days of logs
+        maxSize: '5m',       // Rotate at 5MB
+        datePattern: 'YYYY-MM-DD',
+        compress: true       // Compress old logs
+    }
+}
+```
+
+#### Log Cleanup
+- Automatic cleanup of old logs
+- Configurable retention period
+- Separate archive directory
+
+```javascript
+logging: {
+    cleanup: {
+        enabled: true,
+        maxAge: '30d'       // Delete logs older than 30 days
+    }
+}
+```
+
+#### Metric Thresholds
+Only log metrics when they exceed specified thresholds:
+
+```javascript
+metrics: {
+    cpu: {
+        threshold: 70       // CPU usage > 70%
+    },
+    memory: {
+        threshold: 80       // Memory usage > 80%
+    },
+    eventLoop: {
+        threshold: 100      // Delay > 100ms
+    },
+    api: {
+        responseTime: {
+            threshold: 1000 // Response time > 1s
+        }
+    }
+}
+```
+
 ## Configuration Options
 
 | Option | Type | Default | Description |
@@ -285,10 +341,10 @@ Let's make the Node.js ecosystem better together! 🚀
 
 I believe in the power of community! If you'd like to contribute, here's how you can help:
 
-- 🐛 Report bugs and issues
+- 🐛 Report bugs and issues on our [GitHub Issues](https://github.com/BODHEESH/bodhi-node-profiler/issues)
 - 💡 Suggest new features
 - 📖 Improve documentation
-- 🔧 Submit pull requests
+- 🔧 Submit [pull requests](https://github.com/BODHEESH/bodhi-node-profiler/pulls)
 - ⭐ Star the project if you find it useful!
 
 Check out our [Contributing Guide](CONTRIBUTING.md) for more details.
@@ -304,12 +360,12 @@ Need help? I'm here for you!
 
 ## License
 
-MIT
+MIT © [Bodheesh VC](https://github.com/BODHEESH)
 
 ---
 
 <div align="center">
-  Made with ❤️ by <a href="https://github.com/bodheeshvc">Bodheesh VC</a>
+  Made with ❤️ by <a href="https://github.com/BODHEESH">Bodheesh VC</a>
   <br />
-  If you find this tool helpful, consider giving it a ⭐️!
+  If you find this tool helpful, consider giving it a ⭐️ on <a href="https://github.com/BODHEESH/bodhi-node-profiler">GitHub</a>!
 </div>

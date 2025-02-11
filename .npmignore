@@ -1,0 +1,35 @@
+# Development files
+.git
+.gitignore
+.github
+.vscode
+.idea
+*.log
+
+# Source files (since we're publishing compiled code)
+src/
+test/
+tests/
+__tests__/
+coverage/
+
+# Development configurations
+tsconfig.json
+jest.config.js
+.eslintrc
+.prettierrc
+.editorconfig
+
+# Example and documentation
+test-app/
+docs/
+
+# Build process
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
